@@ -17,7 +17,6 @@ with os.scandir(path) as files:  #os.scandir creates an iterable of files in dir
             images.append(os.path.join(path,file.name))
 
 
-print(images)
 model = VGG16()
 model = Model(inputs=model.inputs, outputs=model.layers[-2].output)
 

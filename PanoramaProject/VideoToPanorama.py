@@ -144,15 +144,6 @@ def get_num_frames(input_filename):
 
     H = S @ Tinv @ H @ Tfwd
 
-    ######################################################################
-    # Now translate the final warped image so we can see it all. This uses
-    # the same trick from transrot.py, except instead of modifying the
-    # homography matrix directly, just composes it with a translation.
-
-    # Get corner points of original image - note this is shaped as an
-    # n-by-1-by-2 array, because that's what cv2.perspectiveTransform
-    # expects. If you have a more typical n-by-2 array, you can use
-    # numpy's reshape method to get it into the correct shape.
     p = np.array( [ [[0, 0]],
                     [[w, 0]],
                     [[w, h]],
